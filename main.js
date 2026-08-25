@@ -23,7 +23,7 @@ client.once('ready', async () => {
   
   // Establecer status personalizado
   try {
-    await client.user.setActivity('NADA ES LO QUE PARECE', { type: ActivityType.Playing });
+    await client.user.setActivity('NADA ES LO QUE PARECE', { type: ActivityType.Watching });
     console.log('✓ Status establecido: NADA ES LO QUE PARECE');
   } catch (e) {
     console.log('⚠️ No se pudo establecer status:', e.message);
@@ -66,7 +66,7 @@ client.on('interactionCreate', async (interaction) => {
     if (!interaction.isChatInputCommand()) return;
     
     if (interaction.commandName === 'link') {
-      const link = "https://www.youtube.com/watch?v=NUVG5_yuYO8";
+      const link = "https://www.youtube.com/watch?v=Vxo7swlpBJA";
       
       await interaction.reply({
         content: `🔗 **Link exclusivo:** ${link}`,
