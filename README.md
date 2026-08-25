@@ -9,14 +9,14 @@ Bot de Discord que envía enlaces en el canal pero **solo visible para quien lo 
 - ✅ Status personalizado: "NADA ES LO QUE PARECE"
 - ✅ Gestión segura de tokens con `.env`
 - ✅ Privacidad total: nadie más ve nada
+- ✅ **Totalmente convertido a Node.js/JavaScript**
 
 ## 📋 Requisitos
 
-- Python 3.8+
-- discord.py 2.3.2+
-- python-dotenv
+- Node.js 18.x o superior
+- npm o yarn
 
-## 🚀 Instalación
+## 🚀 Instalación Local
 
 1. **Clonar el repositorio**
    ```bash
@@ -24,27 +24,12 @@ Bot de Discord que envía enlaces en el canal pero **solo visible para quien lo 
    cd THE_BACKROOMS_BOT_SHIRO
    ```
 
-2. **Crear entorno virtual**
+2. **Instalar dependencias**
    ```bash
-   python -m venv venv
-   
-   # En Windows
-   venv\Scripts\activate
-   
-   # En macOS/Linux
-   source venv/bin/activate
+   npm install
    ```
 
-3. **Instalar dependencias**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configurar el bot**
-   - Copia `.env.example` a `.env`
-   ```bash
-   cp .env.example .env
-   ```
+3. **Configurar el bot**
    - Abre `.env` y añade tu token de Discord:
    ```
    DISCORD_TOKEN=tu_token_aqui
@@ -52,9 +37,14 @@ Bot de Discord que envía enlaces en el canal pero **solo visible para quien lo 
 
 ## 🎮 Uso
 
-**Ejecutar el bot:**
+**Ejecutar el bot localmente:**
 ```bash
-python main.py
+npm start
+```
+
+**Para desarrollo (con auto-reload):**
+```bash
+npm run dev
 ```
 
 **Comandos disponibles:**
@@ -68,6 +58,26 @@ python main.py
 2. El bot envía el link en el canal
 3. ⚠️ **Solo el usuario que ejecutó el comando lo ve**
 4. Los demás usuarios **no ven nada**
+
+## 🚀 Despliegue en Railway
+
+### Opción 1: Desde el navegador (más fácil)
+1. Ir a [railway.app](https://railway.app)
+2. Click en "Start New Project"
+3. Click en "Deploy from GitHub"
+4. Selecciona este repositorio
+5. Railway detectará automáticamente que es Node.js
+6. **Agregar variable de entorno:**
+   - `DISCORD_TOKEN` = Tu token de Discord
+7. El bot se desplegará automáticamente ✅
+
+### Opción 2: Con Railway CLI
+```bash
+npm install -g @railway/cli
+railway login
+railway link
+railway up
+```
 
 ## 🔐 Seguridad
 
@@ -87,20 +97,25 @@ LINK_URL=https://www.youtube.com/watch?v=NUVG5_yuYO8
 
 ## 🛠️ Desarrollo
 
-Para añadir más comandos slash, edita `main.py`:
+Para añadir más comandos slash, edita `main.js`:
 
-```python
-@bot.tree.command(name='nuevo_comando', description='Descripción del comando')
-async def slash_nuevo_comando(interaction: discord.Interaction):
-    await interaction.response.send_message("Mensaje solo para ti", ephemeral=True)
+```javascript
+if (interaction.commandName === 'nuevo_comando') {
+  await interaction.reply({
+    content: "Mensaje solo para ti",
+    ephemeral: true
+  });
+}
 ```
 
 ## 📞 Soporte
 
-Si necesitas ayuda, consulta la [documentación de discord.py](https://discordpy.readthedocs.io/)
+Si necesitas ayuda, consulta la [documentación de discord.js](https://discord.js.org/)
 
 ---
 
 **Bot creado por:** vnuno325-netizen  
 **Estado:** NADA ES LO QUE PARECE 👻  
 **Link:** https://www.youtube.com/watch?v=NUVG5_yuYO8
+
+**Migrado a Node.js/JavaScript:** 2026-08-25
