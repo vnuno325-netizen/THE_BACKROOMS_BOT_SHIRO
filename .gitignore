@@ -1,29 +1,9 @@
-# Variables de entorno
 .env
 .env.local
-.env.*.local
-
-# Dependencias
 node_modules/
 npm-debug.log
 yarn-error.log
 package-lock.json
-
-# Archivos del sistema
 .DS_Store
-Thumbs.db
-*.log
-
-# IDEs
 .vscode/
 .idea/
-*.swp
-*.swo
-
-# Python (en caso de que queden residuos)
-__pycache__/
-*.py[cod]
-*$py.class
-venv/
-ENV/
-env/
