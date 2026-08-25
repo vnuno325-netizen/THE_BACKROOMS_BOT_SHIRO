@@ -1,0 +1,23 @@
+{
+  "name": "the-backrooms-bot-shiro",
+  "version": "1.0.0",
+  "description": "Bot de Discord que envía enlaces en el canal pero solo visible para quien lo ejecuta",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main.js"
+  },
+  "keywords": ["discord", "bot", "shiro", "backrooms"],
+  "author": "vnuno325-netizen",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.15.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": "18.x || 20.x"
+  }
+}
