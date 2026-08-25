@@ -23,7 +23,7 @@ async def on_ready():
     # Establecer status personalizado
     await bot.change_presence(
         activity=discord.Activity(
-            type=discord.ActivityType.playing,
+            type=discord.ActivityType.watching,
             name="NADA ES LO QUE PARECE"
         )
     )
@@ -42,7 +42,7 @@ async def slash_link(interaction: discord.Interaction):
     """Envía un link en el canal pero solo lo ve quien ejecuta el comando"""
     try:
         # Link de The Backrooms
-        link = "https://www.youtube.com/watch?v=NUVG5_yuYO8"
+        link = "https://www.youtube.com/watch?v=Vxo7swlpBJA"
         
         # Enviar mensaje en el canal pero SOLO visible para el usuario que lo ejecuta
         await interaction.response.send_message(f"🔗 **Link exclusivo:** {link}", ephemeral=True)
